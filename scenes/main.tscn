@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqur6ysxw6jvm"]
+
+[ext_resource type="PackedScene" uid="uid://cekvfavo20vcj" path="res://scenes/player.tscn" id="1_n6k2v"]
+[ext_resource type="PackedScene" uid="uid://c4egpdmqxjicp" path="res://scenes/boll.tscn" id="2_ep100"]
+[ext_resource type="PackedScene" uid="uid://drxjxx3o1iyq8" path="res://scenes/enemy.tscn" id="3_okmj2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_n6k2v")]
+position = Vector2(177, 698)
+
+[node name="boll" parent="." instance=ExtResource("2_ep100")]
+position = Vector2(244, 361)
+speed = 400
+
+[node name="enemy" parent="." node_paths=PackedStringArray("boll") instance=ExtResource("3_okmj2")]
+position = Vector2(176, 3)
+boll = NodePath("../boll")
